@@ -27,7 +27,9 @@ DEBUG = True  # TODO delete when actually deploying
 
 ALLOWED_HOSTS = [
     'undefined-api.herokuapp.com',
-    'localhost',  # for local testing -- TODO delete when actually deploying
+    # for local testing -- TODO delete when actually deploying
+    'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -40,7 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'user_api'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
