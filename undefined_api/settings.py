@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'undefined_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dc4f4ug8e0ces5',
+        'HOST': 'ec2-107-21-201-57.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'njyvfkszcjlcal',
+        'PASSWORD': '24cee69a908016414dbdb6e3ca47dc3a057ddde625a6923b1542cb2d08fa4cf9',
+        'TEST': {
+            'NAME': 'undefined-api-testdb'
+        }
     }
 }
 
