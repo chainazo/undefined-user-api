@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g9b#dxf6d)o91ay%g69x0$deod&cy6ikm1js=toev+y)z23n#1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # TODO delete when actually deploying
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'undefined-api.herokuapp.com',
+    'localhost',  # for local testing -- TODO delete when actually deploying
+]
 
 
 # Application definition
