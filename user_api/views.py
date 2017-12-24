@@ -56,9 +56,9 @@ class UserDetailView(APIView):
         GET - Single user detail
         :param request: http request
         :param format: html? json?
+        :param pk: primary key of object
         :return: json object containing single user detail
         """
-
         user_model = self._get_object(pk=pk)
         user_serializer = UserSerializer(user_model)
         return Response(user_serializer.data)
