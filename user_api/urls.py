@@ -1,8 +1,8 @@
-from django.urls import path, include
-from user_api.views import UserView, UserDetailView
+from django.urls import path
+from user_api.views import UserView, UserDetailView, LoginView
 
 urlpatterns = [
-    path('', UserView.as_view()),
-    path('api-auth/', include('rest_framework.urls')),
-    path('<int:pk>/', UserDetailView.as_view()),
+    path('users/', UserView.as_view()),
+    path('users/<uuid:user_id>/', UserDetailView.as_view()),
+    path('sessions/', LoginView.as_view()),
 ]
