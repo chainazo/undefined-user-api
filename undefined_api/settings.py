@@ -23,11 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g9b#dxf6d)o91ay%g69x0$deod&cy6ikm1js=toev+y)z23n#1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # TODO delete when actually deploying
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'undefined-api.herokuapp.com',
-    # for local testing -- TODO delete when actually deploying
     'localhost',
     '127.0.0.1',
 ]
@@ -97,15 +96,12 @@ WSGI_APPLICATION = 'undefined_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc4f4ug8e0ces5',
-        'HOST': 'ec2-107-21-201-57.compute-1.amazonaws.com',
+        'NAME': 'undefined-api-testdb',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
-        'USER': 'njyvfkszcjlcal',
-        'PASSWORD': '24cee69a908016414dbdb6e3ca47dc3a057ddde625a6923b1542cb2d08fa4cf9',
-        'TEST': {
-            'NAME': 'undefined-api-testdb'
-        }
-    }
+        'USER': 'gyukebox',
+        'PASSWORD': 'biss9541',
+    },
 }
 
 
