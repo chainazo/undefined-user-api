@@ -102,10 +102,7 @@ DATABASES = {
         'PORT': '5432',
         'USER': 'njyvfkszcjlcal',
         'PASSWORD': '24cee69a908016414dbdb6e3ca47dc3a057ddde625a6923b1542cb2d08fa4cf9',
-        'TEST': {
-            'NAME': 'undefined-api-testdb'
-        }
-    }
+    },
 }
 
 
