@@ -55,7 +55,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.IsAdminUser',
-    )
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
 MIDDLEWARE = [
@@ -95,12 +96,12 @@ WSGI_APPLICATION = 'undefined_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc4f4ug8e0ces5',
-        'HOST': 'ec2-107-21-201-57.compute-1.amazonaws.com',
-        'PORT': '5432',
-        'USER': 'njyvfkszcjlcal',
-        'PASSWORD': '24cee69a908016414dbdb6e3ca47dc3a057ddde625a6923b1542cb2d08fa4cf9',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '',
+        'HOST': '',
+        'PORT': '',
+        'USER': '',
+        'PASSWORD': '',
     },
 }
 
