@@ -11,11 +11,10 @@ class UserView(APIView):
     View for all users
     """
 
-    def get(self, request, format=None):
+    def get(self, request):
         """
         GET - All users list
         :param request: http request
-        :param format: html? json?
         :return: json object containing all user information
         """
         all_users = UserModel.objects.all()
@@ -30,7 +29,7 @@ class UserView(APIView):
         """
         new_user_serializer = UserCreateSerializer(data=request.data)
         if new_user_serializer.is_valid():
-            new_user_serializer.save()
+            new_user_serializer.create(validated_data=request.data)
             return Response(new_user_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(new_user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -47,12 +46,11 @@ class UserDetailView(APIView):
         except UserModel.DoesNotExist:
             raise Http404
 
-    def get(self, request, user_id, format=None):
+    def get(self, request, user_id):
         """
         GET - Single user detail
         :param request: http request
-        :param format: html? json?
-        :param pk: primary key of object
+        :param user_id: user id of object
         :return: json object containing single user detail
         """
         user_model = self._get_object(user_id=user_id)
